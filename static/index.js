@@ -12,9 +12,13 @@ function displayResult(data) {
     return;
   }
 
-  let recycleable = false;
+  console.log(data);
   const recycleableMaterials = ["pet", "hdpe", "aluminium", "steel", "glass", "paper", "cardboard"]
-  if(data["packaging"]) {
+  let recycleable;
+  if(!data["packaging"]) {
+    recycleable = "N/A";
+  } else {
+    recycleable = false;
     for(const material of recycleableMaterials) {
       if(data["packaging"].toLowerCase().includes(material)) {
         recycleable = true;
