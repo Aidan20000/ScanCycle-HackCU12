@@ -1,0 +1,71 @@
+/* page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+}
+
+/* title */
+h1 {
+    margin-bottom: 25px;
+}
+
+/* scanner area */
+#scanner {
+    width: 400px;
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* make the camera feed fill the container properly */
+#scanner video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* quagga overlay canvas */
+#scanner canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* results container */
+#results {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* result text */
+#results p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* product name emphasis */
+#results p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* submit button */
+.submit-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
