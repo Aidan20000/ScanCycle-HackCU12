@@ -62,11 +62,24 @@ def scan():
     if product_name == "" and brands == "":
         return flask.jsonify({"error": "Product Not Found", "code": barcode})
 
+    # ---- Calc Sustainability Score ----
+    score = 50
+    
+    if "plastic" in packaging.lower():
+        score -= 15
+
+    if "glass" in packaging.lower():
+        score += 10
+
+    if "recyclable" in packaging.lower():
+        score += 10
+
     result = {
         "product-name": product_name,
         "brands": brands,
         "packaging": packaging,
-        "nutriscore_grade": nutriscore
+        "nutriscore_grade": nutriscore,
+        "sustainability_score": (str(score) + "/ 100")
     }
 
     return flask.jsonify(result)
