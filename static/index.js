@@ -52,6 +52,7 @@ function displayResult(data) {
   if(data.error) {
     console.log("Product Not Found");
     container.innerHTML = `<p>Product Not Found</p>\
+                           <p> barcode: ${data.code}</p>\
                            <a class="submit-btn" href="https://world.openfoodfacts.org/cgi/product.pl?code=${data.code}" target="_blank">
                            Add Product to Database
                            </a>`
@@ -86,7 +87,7 @@ function displayResult(data) {
                         <p>Nutrition Score: ${data["nutriscore_grade"] || "N/A"}</p>\
                         <p>Packaging: ${data["packaging"] || "N/A"}</p>\
                         <p>Recycleable: ${recycleable}</p>\
-                        <p><strong>Sustainability Score:</strong> <span id="score">${score}</span></p>`
+                        <p><strong>Sustainability Score:</strong> <span id="score">${score} / 100</span></p>`
   const scoreText = document.getElementById("score");
 
   if(score >= 80) {scoreText.style.color = "green"}

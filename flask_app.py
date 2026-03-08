@@ -79,7 +79,7 @@ def scan():
         "brands": brands,
         "packaging": packaging,
         "nutriscore_grade": nutriscore,
-        "sustainability_score": (str(score) + "/ 100")
+        "sustainability_score": score
     }
 
     return flask.jsonify(result)
