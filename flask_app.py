@@ -1,5 +1,11 @@
 import flask
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
 
 app = flask.Flask(__name__)
 
@@ -36,7 +42,7 @@ def scan():
 
     # ---- Backup UPC API ----
     try:
-        url = f"https://api.searchupc.com/v1/product/upc/{barcode}?apikey=upc_jown714hcoqmmhc7lkr"
+        url = f"https://api.searchupc.com/v1/product/upc/{barcode}?apikey={API_KEY}"
         try:
             response2 = requests.get(url, timeout=5)
             if response2.status_code == 200:

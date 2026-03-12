@@ -2,6 +2,11 @@
 
 A smart barcode scanning application that provides real-time product information and sustainability insights. ScanCycle leverages computer vision and open data APIs to help users make informed purchasing and recycling decisions.
 
+## Setup
+
+pip install -r requirements.txt
+cp .env.example .env
+
 ## Features
 
 - **Real-time Barcode Scanning**: Uses Quagga2 library to scan EAN and UPC barcodes directly from your webcam
